@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- navbar code -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent " id="navbar1">
+        <div class="container-fluid">
+          <img src="./media/logo/logo.png" alt="" class="navbar-brand mx-4" >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav fs-5 fw-bold">
+              <li class="nav-item me-5">
+                <a class="nav-link" href="./index.html">Home</a>
+              </li> 
+              <li class="nav-item me-5">
+                <a class="nav-link active" href="./about.html">About</a>
+              </li>
+              <li class="nav-item me-5">
+                <a class="nav-link" href="./product.html">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+              </li>
+            </ul>
+            <div style="width:300px;" class="justify-content-center d-flex">
+              <a href="./cart.html">
+                <div class="cart-icon">
+                  <img src="./media/icon/shopping_cart.png" alt="">
+                  <div class="circle" id="cartValue"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- <img src="./media/image/Logofull.png" alt="" class="navbar-brand" style="width:300px; visibility: hidden;"> -->
+        </div>
+      </nav>     
+  
+  
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar2" style="display: none;">
+        <div class="container-fluid">
+          <img src="./media/image/Logo.png" alt="" class="navbar-brand mx-5" style="width:50px">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav fs-6 fw-bold " >
+              <li class="nav-item me-5">
+                <a class="nav-link"  href="./index.html">Home</a>
+              </li>
+              <li class="nav-item me-5">
+                <a class="nav-link active" href="./about.html">About</a>
+              </li>
+              <li class="nav-item me-5">
+                <a class="nav-link" href="./product.html">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+            <div class="cart-icon me-5">
+              <a href="./cart.html">
+              <img src="./media/icon/shopping-cart_after.png" alt="">
+              <div class="circle" id="cartValue"></div>
+              </a>
+            </div>
+        </div>
+      </nav>
+
+
+      <script>const navbar1 = document.getElementById("navbar1");
+        const navbar2 = document.getElementById("navbar2");
+        
+        
+        window.addEventListener("scroll", () => {
+          if (window.pageYOffset > navbar1.offsetHeight) {
+            navbar1.style.display = "none";
+            navbar2.style.display = "block";
+          } else {
+            navbar1.style.display = "block";
+            navbar2.style.display = "none";
+          }
+        });
+        </script>
+
+
+    <!-- video code -->
+    <div style="width:100vw; height: 90vh;" id="video-section">
+        <video width="100%" height="100%" autoplay muted>
+            <source src="./media/video/video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <script>
+      // Get the video section element
+      var videoSection = document.getElementById("video-section");
+    
+      // Add an event listener to resize the element when the window is resized
+      window.addEventListener("resize", resizeVideoSection);
+    
+      // Call the resize function once to set the initial height
+      resizeVideoSection();
+    
+      // Define the resize function
+      function resizeVideoSection() {
+        // Get the current width of the window
+        var windowWidth = window.innerWidth;
+    
+        // Set the height of the video section based on the window width
+        if (windowWidth < 1200) {
+          videoSection.style.height = "fit-content";
+        } else {
+          videoSection.style.height = "90vh";
+        }
+      }
+    </script>
+    
+    
+
+    <section class="product-cataloge bg-dark text-light px-4">
+        <p><b>Metaledge Exports Private Limited</b> is a 4 years 5 months old Private Limited Indian Non-Government Company incorporated on 18 Sep 2018. Its registered office is in Moradabad, Uttar Pradesh, India</p>
+        <p>The Company's status is Active, and it has filed its Annual Returns and Financial Statements up to 31 Mar 2022 (FY 2021-2022). It's a company limited by shares having an authorized capital of Rs 1.00 Lakh and a paid-up capital of Rs 1.00 Lakh as per MCA. 2 Directors are associated with the organization. </p>
+        <p><b>Manoj Kumar Sharma</b> and <b>Seema Sharma</b> are presently associated as directors.</p>
+        <p> <b>Industry: </b>
+            Manufacture of Basic Metals Manufacture of Basic Iron Steel
+            Deals in Home Décor & Planters</p>
+        <p class="prod">Fair</p>
+
+
+        <div class="container-fluid text-center py-4 gap-4 d-flex flex-wrap justify-content-center">
+          <div class="image-container">
+            <img src="./media/image/fair/fair1.webp" alt="" class="img-thumbnail" style="max-width: 400px;">
+          </div>
+          <div class="image-container">
+            <img src="./media/image/fair/fair5.webp" alt="" class="img-thumbnail" style="max-width: 400px;">
+          </div>
+          <div class="image-container">
+            <img src="./media/image/fair/fair2.webp" alt="" class="img-thumbnail" style="max-width: 400px;">
+          </div>
+          <div class="image-container">
+            <img src="./media/image/fair/fair3.webp" alt="" class="img-thumbnail" style="max-width: 400px;">
+          </div>
+          <div class="image-container">
+            <img src="./media/image/fair/fair6.webp" alt="" class="img-thumbnail" style="max-width: 400px;">
+          </div>
+          <div class="image-container">
+            <img src="./media/image/fair/fair4.webp" alt="" class="img-thumbnail" style="max-width: 400px;">
+          </div>
+        </div>
+        
+      
+        
+    </section>
+
+    <!-- Footer Code  -->
+<footer class="bg-light py-4 text-dark">
+  <div class="container-fluid">
+      <div class=" text-center ">
+          <img src="./media/logo/logo.png" alt="" style=" margin-top: 10px; background-color: white;" class="d-block mx-auto">
+          <p class="mt-4 mx-5"><b>Metaledge Exports Private Limited</b> is a 4 years 5 months old Private Limited Indian Non-Government Company incorporated on 18 Sep 2018. Its registered office is in Moradabad, Uttar Pradesh, India</p>
+          <p style="margin: auto;"><b>Manoj Kumar Sharma</b> and <b>Seema Sharma</b> are presently associated as directors.</p>
+
+      </div>
+      <div class="text-center">
+          <!-- <p class=" text-center fs-3 mx-auto d-block mt-4" style="font-family: monospace;color: black;font-weight: 800;border-bottom: 2px solid black; width:100px">LINKS</p> -->
+          <div class="d-flex justify-content-center flex-wrap w-100">
+              <a href="./index.html" class="btn btn-custom px-5 py-2 me-2 my-2">Home</a>
+              <a href="./about.html" class="btn btn-custom px-5 py-2 me-2 my-2">About</a>
+              <a href="./product.html" class="btn btn-custom px-5 py-2 me-2 my-2">Product</a>
+              <a href="./contact.html" class="btn btn-custom px-5 py-2 me-2 my-2">Contact</a>
+            </div>
+            
+      <div class=" copy text-center mt-3 justify-content-center w-100">
+          &copy; 2023 Metaledge Exports PVT. LTD. All rights reserved | Made by <a href="https://www.facebook.com/cscouncilindia/" style="text-decoration: none; ">CS Council</a>
+      </div>
+  </div>
+</footer>
+
+    <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+
+  </body>
+</html>
