@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us - Metaledge</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<style>
+	.form-dark {
+  color: #fff;
+  
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.form-dark label {
+  font-weight: bold;
+}
+
+.form-dark input,
+.form-dark textarea {
+  color: #fff;
+  background-color: #131212;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.form-dark input:focus,
+.form-dark textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.form-dark button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.form-dark button:hover {
+  background-color: #0069d9;
+}
+input{
+	background-color: #555;
+}
+</style>
+<body style="background-color: black;">
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbar1">
+    <div class="container-fluid">
+      <img src="./media/logo/logo.png" alt="" class="navbar-brand mx-4" >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav fs-5 fw-bold">
+          <li class="nav-item me-5">
+            <a class="nav-link " href="./index.html">Home</a>
+          </li> 
+          <li class="nav-item me-5">
+            <a class="nav-link" href="./about.html">About</a>
+          </li>
+          <li class="nav-item me-5">
+            <a class="nav-link" href="./product.html">Product</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link active" href="./contact.html">Contact</a>
+          </li>
+        </ul>
+        <div style="width:300px;" class="justify-content-center d-flex">
+          <a href="./cart.html">
+            <div class="cart-icon">
+              <img src="./media/icon/shopping_cart.png" alt="">
+              <div class="circle" id="cartValue"></div>
+            </div>
+          </a>
+            </div>
+      </div>
+      
+      <!-- <img src="./media/image/Logofull.png" alt="" class="navbar-brand" style="width:300px; visibility: hidden;"> -->
+    </div>
+  </nav>
+  
+  <script>
+    const navbar = document.getElementById("navbar1");
+  
+    // add an event listener to the navbar-toggler button
+    document.querySelector(".navbar-toggler").addEventListener("click", function() {
+      // check if the navbar has the bg-white class
+      const isWhite = navbar.classList.contains("bg-white");
+  
+      // if the navbar has the bg-white class, remove it and add bg-transparent class
+      if (isWhite) {
+        navbar.classList.remove("bg-white");
+        navbar.classList.add("bg-white");
+        navbar.querySelectorAll(".nav-link").forEach(function(link) {
+          link.classList.remove("text-black");
+        });
+      } else {
+        // if the navbar does not have the bg-white class, add it and remove bg-transparent class
+        navbar.classList.remove("bg-white");
+        navbar.classList.add("bg-white");
+        navbar.querySelectorAll(".nav-link").forEach(function(link) {
+          link.classList.add("text-black");
+        });
+      }
+    });
+  </script>
+  
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar2" style="display: none;">
+    <div class="container-fluid">
+      <img src="./media/image/Logo.png" alt="" class="navbar-brand mx-5" style="width:50px">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav fs-6 fw-bold " >
+          <li class="nav-item me-5">
+            <a class="nav-link "  href="./index.html">Home</a>
+          </li>
+          <li class="nav-item me-5">
+            <a class="nav-link" href="./about.html">About</a>
+          </li>
+          <li class="nav-item me-5">
+            <a class="nav-link" href="./product.html">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+        <div class="cart-icon me-5">
+			<a href="./cart.html">
+				<img src="./media/icon/shopping-cart_after.png" alt="">
+				<div class="circle" id="cartValue"></div>
+			</a>
+        </div>
+    </div>
+  </nav>
+
+
+  <script>const navbar1 = document.getElementById("navbar1");
+    const navbar2 = document.getElementById("navbar2");
+    
+    
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > navbar1.offsetHeight) {
+        navbar1.style.display = "none";
+        navbar2.style.display = "block";
+      } else {
+        navbar1.style.display = "block";
+        navbar2.style.display = "none";
+      }
+    });
+    </script>
+
+
+<div class="container-fluid" style="max-height: 80vh; margin-top: 20vh; width:50vw">
+	<h3 class="text-center text-light">Get in touch with us</h3>
+	<form onsubmit="sendEmail(); reset(); return false;" class="form-dark">
+		<div class="form-group">
+		  <label for="name">Name</label>
+		  <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
+		</div>
+		<div class="form-group">
+		  <label for="email">Email</label>
+		  <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+		</div>
+		<div class="form-group">
+		  <label for="message">Message</label>
+		  <textarea class="form-control" id="message" name="message" rows="5" placeholder="Message" required></textarea>
+		</div>
+		<button type="submit" class="btn w-100" style="background-color: #D2AE6D; " >Submit</button>
+	</form>
+</div>
+
+
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+
+<script src="./mail.js">
+	
+</script>
+	
+
+
+
+<!-- Footer Code  -->
+<footer class="bg-light py-4 text-dark ">
+  <div class="container-fluid">
+      <div class=" text-center ">
+          <img src="./media/logo/logo.png" alt="" style=" margin-top: 10px; background-color: white;" class="d-block mx-auto">
+          <p class="mt-4 mx-5"><b>Metaledge Exports Private Limited</b> is a 4 years 5 months old Private Limited Indian Non-Government Company incorporated on 18 Sep 2018. Its registered office is in Moradabad, Uttar Pradesh, India</p>
+          <p style="margin: auto;"><b>Manoj Kumar Sharma</b> and <b>Seema Sharma</b> are presently associated as directors.</p>
+
+      </div>
+      <div class="text-center">
+          <!-- <p class=" text-center fs-3 mx-auto d-block mt-4" style="font-family: monospace;color: black;font-weight: 800;border-bottom: 2px solid black; width:100px">LINKS</p> -->
+          <div class="d-flex justify-content-center flex-wrap w-100">
+              <a href="./index.html" class="btn btn-custom px-5 py-2 me-2 my-2">Home</a>
+              <a href="./about.html" class="btn btn-custom px-5 py-2 me-2 my-2">About</a>
+              <a href="./product.html" class="btn btn-custom px-5 py-2 me-2 my-2">Product</a>
+              <a href="./contact.html" class="btn btn-custom px-5 py-2 me-2 my-2">Contact</a>
+            </div>
+            
+      <div class=" copy text-center mt-3 justify-content-center w-100">
+          &copy; 2023 Metaledge Exports PVT. LTD. All rights reserved | Made by <a href="https://www.facebook.com/cscouncilindia/" style="text-decoration: none; ">CS Council</a>
+      </div>
+  </div>
+</footer>
+  
+  <script src="./main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+  
+</body>
+</html>
