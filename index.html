@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+ 
+<body class="bg-dark">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top" id="navbar1">
+      <div class="container-fluid">
+        <img src="./media/logo/logo.png" alt="" class="navbar-brand mx-4">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav fs-5 fw-bold">
+            <li class="nav-item me-5">
+              <a class="nav-link active" href="./index.html">Home</a>
+            </li> 
+            <li class="nav-item me-5">
+              <a class="nav-link" href="./about.html">About</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link" href="./product.html">Product</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+          </ul>
+
+        <div style="width:30%" class="justify-content-center d-flex">
+          <a href="./cart.html">
+            <div class="cart-icon">
+              <img src="./media/icon/shopping_cart.png" alt="">
+              <div class="circle" id="cartValue"></div>
+            </div>
+          </a>          
+        </div>
+        </div>
+      </div>
+    </nav>
+    
+    <script>
+      const navbar = document.getElementById("navbar1");
+    
+      // add an event listener to the navbar-toggler button
+      document.querySelector(".navbar-toggler").addEventListener("click", function() {
+        // check if the navbar has the bg-white class
+        const isWhite = navbar.classList.contains("bg-white");
+    
+        // if the navbar has the bg-white class, remove it and add bg-transparent class
+        if (isWhite) {
+          navbar.classList.remove("bg-white");
+          navbar.classList.add("bg-transparent");
+          navbar.querySelectorAll(".nav-link").forEach(function(link) {
+            link.classList.remove("text-black");
+          });
+        } else {
+          // if the navbar does not have the bg-white class, add it and remove bg-transparent class
+          navbar.classList.remove("bg-transparent");
+          navbar.classList.add("bg-white");
+          navbar.querySelectorAll(".nav-link").forEach(function(link) {
+            link.classList.add("text-black");
+          });
+        }
+      });
+    </script>
+    
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar2" style="display: none;">
+      <div class="container-fluid">
+        <img src="./media/image/Logo.png" alt="" class="navbar-brand mx-5" style="width:50px">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav fs-6 fw-bold " >
+            <li class="nav-item me-5">
+              <a class="nav-link active"  href="./index.html">Home</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link" href="./about.html">About</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link" href="./product.html">Product</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+          <div class="cart-icon me-5">
+            <a href="./cart.html">
+            <img src="./media/icon/shopping-cart_after.png" alt="">
+            <div class="circle" id="cartValue"></div>
+            </a>
+          </div>
+      </div>
+    </nav>
+
+
+    <script>const navbar1 = document.getElementById("navbar1");
+      const navbar2 = document.getElementById("navbar2");
+      
+      
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > navbar1.offsetHeight) {
+          navbar1.style.display = "none";
+          navbar2.style.display = "block";
+        } else {
+          navbar1.style.display = "block";
+          navbar2.style.display = "none";
+        }
+      });
+      </script>
+
+      <!-- slider -->
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner" style="max-height:95vh; width: 99.99vw">
+          <div class="carousel-item active" data-bs-interval="3000">
+            <img src="./media/image/scroll1.webp" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="./media/image/scroll2.webp" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="./media/image/scroll3.webp" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="./media/image/scroll4.webp" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      
+
+      <!-- content section -->
+      <section class="product-cataloge bg-dark text-light px-4">
+        <p><b>Metaledge Exports Private Limited</b> is a 4 years 5 months old Private Limited Indian Non-Government Company incorporated on 18 Sep 2018. Its registered office is in Moradabad, Uttar Pradesh, India</p>
+        <p>The Company's status is Active, and it has filed its Annual Returns and Financial Statements up to 31 Mar 2022 (FY 2021-2022). It's a company limited by shares having an authorized capital of Rs 1.00 Lakh and a paid-up capital of Rs 1.00 Lakh as per MCA. 2 Directors are associated with the organization. </p>
+        <p><b>Manoj Kumar Sharma</b> and <b>Seema Sharma</b> are presently associated as directors.</p>
+        <p> <b>Industry: </b>
+            Manufacture of Basic Metals Manufacture of Basic Iron Steel
+            Deals in Home Décor & Planters</p>
+            <p class="prod">Our Products</p>
+
+            
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+                <div class="carousel-inner pb-5 pt-3 d-block mx-auto" style="width:84%" >
+                  <div class="carousel-item active " >
+                    <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod50.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Floor U-Shape Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and has brass plating where the material used to make it is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid35')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod53.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Piano Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 1 and has white powder coated and gold plating where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid0')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod54.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Twin Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and has white powder and matt black powder coated where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid2')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod9.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Metal Mini Desk Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and has metallic brown powder coated where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid6')">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item " >
+                    <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod19.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> U Shape Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and has ivery white and brown powder coated where the material used is Iron. </p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid15')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod13.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Black Large Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and has matt black powder coated where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid11')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod72.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Pink Floor Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and has texture orange powder coating where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid30')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/mirror/prod98.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Bathroom Note Pad Mirror</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in set of 1 and has wood,iron and mirror natural and gold plating made of Wood and Glass.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid37')">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item " >
+                    <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod60.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body ">
+                          <h5 class="card-title text-center"> Black Floor Planter</h5>
+                          <p class="card-text mx-auto px-3">It comes in the set of 3 and has dark green powder coated where the material used is Iron. </p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid21')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod61.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Black Tringle Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and has matt black powder coated where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid22')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod73.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Rose Gold Floor Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 4 and has rose gold plating where the material used to make it is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid31')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod70.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Brown Floor Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and has ivery white or brown powder coat where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;"  onclick="openPopUp('prodid29')">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+      </section>
+
+
+      <div class="container-fluid bg-light d-flex justify-content-evenly text-dark" style="gap: 10px;">
+        <div class="blocks">
+          <img src="./media/icon/quality.png" alt="">
+          <p >Quality Products</p>
+        </div>
+        <div class="blocks">
+          <img src="./media/icon/rate.png" alt="">
+          <p >5 STAR RATING</p>
+        </div>
+        <div class="blocks">
+          <img src="./media/icon/satisfactory.png" alt="" >
+          <p >100% SATISFACTION GUARANTEE</p>
+        </div>
+      </div>
+
+
+    <div class="container-fluid row d-inline-block bg-dark" style="height: 400px;" id="category-carousel-container">
+        <div  style="width:30%; vertical-align: top;" class="d-inline-block" id="boxer">
+            <p class=" text-center mt-4 mx-auto" id="ctn" style="max-width: 400px;" >OUR CATEGORIES</p>
+            <div class="row btn-group-vertical  w-100 d-block mx-auto px-2 d-none" id="part1">
+                <button class="btn-custom " style="background-color: #D2AE6D;" id="btn-category1" onclick="changeCategory('btn-category1')">Mirror</button>
+                <button class="btn-custom" id="btn-category2" onclick="changeCategory('btn-category2')">Hanging Planter</button>
+                <button class="btn-custom" id="btn-category3" onclick="changeCategory('btn-category3')">Indoor Planter</button>
+                <button class="btn-custom" id="btn-category4" onclick="changeCategory('btn-category4')">Planter with Stand</button>
+            </div>
+            <div class=" d-flex justify-content-center w-100 " id="part2">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary" id="btn-category1" onclick="changeCategory('btn-category1')">Mirror</button>
+                <button type="button" class="btn btn-primary" id="btn-category2" onclick="changeCategory('btn-category2')">Hanging Planter</button>
+                <button type="button" class="btn btn-primary" id="btn-category3" onclick="changeCategory('btn-category3')">Indoor Planter</button>
+                <button type="button" class="btn btn-primary" id="btn-category4" onclick="changeCategory('btn-category4')">Planter with Stand</button>
+              </div>
+            </div>
+        </div>
+        <script>// Call the function whenever the window is resized
+          // Get all the buttons with the classes "btn" and "btn-primary"
+          const buttonss = document.querySelectorAll('.btn.btn-primary');
+
+          // Loop through all the buttons and set their background color to "#D2AE6D"
+          buttonss.forEach(button => {
+            button.style.backgroundColor = '#D2AE6D';
+          });
+
+        
+          window.addEventListener('resize', showHideDivs);
+          
+            const buttons = document.querySelectorAll(".btn-category");
+          
+          for (let i = 0; i < buttons.length; i++) {
+            buttons[i].style.color = "#D2AE6D";
+          }
+          </script>
+        
+        
+
+        <!-- mirror category content -->
+        <div class="d-inline-block" style="width:69%;" id="box2">
+            <div id="carouselExampleInterval1" class="carousel slide " data-bs-ride="carousel"  data-bs-interval="false" >
+                <div class="carousel-inner pb-5 pt-3 d-block mx-auto " style="width:94%" >
+                  <div class="carousel-item active " >
+                    <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/mirror/prod99.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center">Table Home Mirror</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 4 and is gold plated where the material used to make it is Iron and Glass.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid39')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/mirror/prod96.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Metal Black Mirror</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and is gold antique where the material used is Iron and Glass.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid36')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/mirror/prod98.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Bathroom Note Pad Mirror</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 1 and has wood,iron and mirror natural and gold plating made of Wood and Glass.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid37')">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block visibility-hidden" style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/mirror/prod97.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px; height: 400px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Black Mirror</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 1 and is wood black mirror where the material used is Wood and Glass.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid36')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px; visibility: hidden;">
+                        <img src="./media/image/product8.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center">Product Name</h5>
+                          <p  class="card-text d-block mx-auto px-3">Some quick example text to build on the Product Name and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn d-block mx-auto bg-theme"  onclick="openPopUp()">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px; visibility: hidden;">
+                        <img src="./media/image/product10.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Bathroom Note Pad Mirror</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 1 and has wood,iron and mirror natural and gold plating made of Wood and Glass.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp()">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleInterval1" data-bs-slide="prev" style="width: 30px;">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval1" data-bs-slide="next" style="width:30px;">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+
+              <!-- hanging planter category content -->
+              <div id="carouselExampleInterval2" class="carousel slide d-none" data-bs-ride="carousel"  data-bs-interval="false">
+                <div class="carousel-inner pb-5 pt-3 d-block mx-auto " style="width:94%" >
+                  <div class="carousel-item active " >
+                    <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/hplanter/prod84.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Apple Bowl Hangong Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and has sea green powder coated with white rope where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid1')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px; visibility: hidden;">
+                        <img src="./media/image/mirror/prod96.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Metal Black Mirror</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and is gold antique where the material used is Iron and Glass.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp()">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px; visibility: hidden;">
+                        <img src="./media/image/product10.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Bathroom Note Pad Mirror</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 1 and has wood,iron and mirror natural and gold plating made of Wood and Glass.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp()">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleInterval2" data-bs-slide="prev" style="width: 30px;">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval2" data-bs-slide="next" style="width:30px;">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button> -->
+              </div>
+
+              <!-- Indoor Planter category content -->
+              <div id="carouselExampleInterval3" class="carousel slide d-none" data-bs-ride="carousel"   data-bs-interval="false">
+                <div class="carousel-inner pb-5 pt-3 d-block mx-auto " style="width:94%" >
+                  <div class="carousel-item active " >
+                    <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod8.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Natural Floor Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and is glossey grey and white powder coated where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid5')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod9.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Metal Mini Desk Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and is metallic brown powder coated where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid6')">View Details</a>
+                        </div>
+                      </div>    
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod60.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Black Floor Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and is dark green powder coated where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid21')">View Details</a>
+                        </div>
+                      </div>
+                      </div>
+                      </div>
+                      <div class="carousel-item " >
+                      <div class="d-flex justify-content-evenly">
+
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod61.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Black Tringle Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and is matt black powder coated where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid22')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod67.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Printed Floor Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and has enamel and gold plating where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid26')">View Details</a>
+                        </div>
+                      </div>  
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod70.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Brown Floor Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and has ivery white or brown powder coat where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid29')">View Details</a>
+                        </div>
+                      </div>
+                      </div>
+                      </div>
+                      <div class="carousel-item " >
+                        <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod72.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Pink Floor Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and has texture orange powder coating where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid30')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod73.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Rose Gold Floor Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 4 and has rose gold plating where the material used to made it is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid31')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod49.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Chic Gold Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and has brass gold plating where the material used to made it is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid34')">View Details</a>
+                        </div>
+                      </div>
+                      </div>
+                      </div>
+                      <div class="carousel-item " >
+                        <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/iplanters/prod50.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Floor U Shape Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and has brass plating where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid35')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px; visibility: hidden;">
+                        <img src="./media/image/iplanters/prod49.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Brass Floor Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and has brass gold plating where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px; visibility: hidden;">
+                        <img src="./media/image/iplanters/" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Table Tray Brass Antique Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and is brass antique where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp()">View Details</a>
+                        </div>
+                      </div>
+                      
+                      <!-- <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/product10.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Brass Gold Floor Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and has brass gold plating where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp()">View Details</a>
+                        </div>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleInterval3" data-bs-slide="prev" style="width: 30px;">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval3" data-bs-slide="next" style="width:30px;">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+
+              <!-- planter with stand category -->
+              <div id="carouselExampleInterval4" class="carousel slide d-none" data-bs-ride="carousel"   data-bs-interval="false" >
+                <div class="carousel-inner pb-5 pt-3 d-block mx-auto " style="width:94%" >
+
+                  <div class="carousel-item active " >
+                    <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod53.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Piano Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 1 and has whte powder coated and gold plating where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid0')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod54.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Twin Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and is white powder and matt black powder coated where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid2')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod11.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Goldblack Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and is matt gold plated and black powder coated where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid8')">View Details</a>
+                        </div>
+                      </div>                                            
+                    </div>
+                  </div>
+                  <div class="carousel-item " >
+                    <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod7.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Full Black Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and is black powder coated where the material used to made it is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid4')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod10.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Sky Blue Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and is coated in sky blue and black powder where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid7')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod55.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Gold/Black Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and is pot-matt gold plated and black powder coated where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid3')">View Details</a>
+                        </div>
+                      </div>  
+                    </div>
+                  </div>
+                  <div class="carousel-item " >
+                    <div class="d-flex justify-content-evenly">
+                      <!-- <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Pink Black Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and is matt texture orange and black powder coated where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp()">View Details</a>
+                        </div>
+                      </div> -->
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod12.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Multicolor Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and is multicolor powder where the material used to made this planter is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid10')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod14.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Ivery With Brown Matt Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and is matt ivery brown powder coated where the material is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid12')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod13.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Black Large Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and is matt black powder coated where the material used to make this planter is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid11')">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item " >
+                    <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod16.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Dim Green Matt Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and is olive green and gold matt where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid13')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod17.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> U Rose Gold  Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and is pot rose gold palted and white powder where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid14')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod56.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Dim Black Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and has black powder and brown matt where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid17')">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item " >
+                    <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod18.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> U Shape Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and it is coated in ivery white and brown powder where the material used to made it is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid15')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod21.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Cane Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and is plated with brass palting with cane hand work where the material used to made it is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid16')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod68.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Zing Bowl Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and has industrial gray stand black matt powder coat where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid28')">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item " >
+                    <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod57.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Glossy Gold Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and has glossy gold plating where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid18')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod58.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Ovate Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and is matt gold plated where the material used to make it is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid19')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod59.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Egg Bowl</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and has copper antique and brass plating where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid20')">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item " >
+                    <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod62.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Hipe Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 2 and is coated with matt gold powder coating where the material used to make this planter is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid23')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod64.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Combo Gold Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and is matt gold powder coated where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid24')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod65.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Combo Grey Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3">It comes in the set of 3 and has glossy grey and yellow powder coating where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid25')">View Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item " >
+                    <div class="d-flex justify-content-evenly">
+                      <div class="card d-inline-block " style="width: 24rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod74.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center my-2"> Table Tree Planter</h5>
+                          <p  class="card-text my-4 px-3">It comes in the set of 1 and is multicolor powder or plated where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto " style="background-color: #D2AE6D;" onclick="openPopUp('prodid32')">View Details</a>
+                        </div>
+                      </div>
+                      <div class="card d-inline-block " style="width: 18rem; border-radius: 15px;">
+                        <img src="./media/image/planterws/prod41.webp" class="card-img-top popup border-bottom" style="border-radius: 15px 15px 0px 0px;" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title text-center"> Cane Planter</h5>
+                          <p  class="card-text d-block mx-auto px-3 ">It comes in the set of 1 and is copper with black cane,gold coated where the material used is Iron.</p>
+                          <a href="#" class="btn d-block mx-auto" style="background-color: #D2AE6D;" onclick="openPopUp('prodid16')">View Details</a>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <!-- <div class="carousel-item " >
+                    <div class="d-flex justify-content-evenly">
+                      
+                    </div>
+                  </div> -->
+                </div>
+                <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleInterval4" data-bs-slide="prev" style="width: 30px;">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval4" data-bs-slide="next" style="width:30px;">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+    </div>
+
+
+  <!-- popups codes -->
+  <div class="pop-up justify-content-center" id="prodid0">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planter/prod51.webp" alt="">
+    <h2> Piano Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;10</p>
+            <p><b>Height:</b>&nbsp;28</p>
+            <p><b>Material:</b>&nbsp;Iron</p>
+            <p><b>Set:</b>&nbsp; 1</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10</p>
+            <p><b>Weight(in grams):</b> &nbsp;3000</p>
+             <p><b>Finish:</b>&nbsp;WHITE POWDER COATED, & GOLD PLATING</p>
+        </div>
+    </div>
+
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+<div class="pop-up justify-content-center" id="prodid39">
+  <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+  <img src="./media/image/mirror/prod99.webp" alt="">
+  <h2>Table Home Mirror</h2>
+  <div class="details">
+      <div class="custom-col-1">
+          <p><b>Length:</b>&nbsp;6.25</p>
+          <p><b>Height:</b>&nbsp;5.5</p>
+          <p><b>Material:</b>&nbsp;Wood and Glass</p>
+          <p><b>Set:</b>&nbsp;4</p>
+      </div>
+      <div class="custom-col-2">
+          <p><b>Width:</b>&nbsp;NA</p>
+          <p><b>Weight(in grams):</b>&nbsp;0</p>
+           <p><b>Finish:</b>&nbsp;Gold Plated</p>
+      </div>
+  </div>
+  <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+      Add to Cart
+  </button>
+
+</div>
+
+<div class="pop-up justify-content-center" id="prodid1">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/hplanter/prod84.webp" alt="">
+    <h2> APPLE BOWL Hanging Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp; 7</p>
+            <p><b>Height:</b>&nbsp;7</p>
+            <p><b>Material:</b>&nbsp; Iron</p>
+            <p><b>Set:</b>&nbsp; 2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;7</p>
+            <p><b>Weight(in grams):</b> &nbsp;1240</p>
+             <p><b>Finish:</b>&nbsp;SEA GREEN POWDER COATED WITH WHITE ROPE</p>
+        </div>
+    </div>
+    
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid2">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod6.webp" alt="">
+    <h2> Twin Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Height:</b>&nbsp;20(Large),15(Small)</p>
+            <p><b>Material:</b>&nbsp;Iron </p>
+            <p><b>Set:</b>&nbsp; 2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Weight(in grams):</b>&nbsp;3660</p>
+             <p><b>Finish:</b>&nbsp;White Powder & Matt black Powder Coated</p>
+        </div>
+    </div>
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid3">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod69.webp" alt="">
+    <h2> Gold/Black Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp; 10(Large),8(Small)</p>
+            <p><b>Height:</b>&nbsp;20(Large),15(Small)</p>
+            <p><b>Material:</b>&nbsp; Iron</p>
+            <p><b>Set:</b>&nbsp; 2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Weight(in grams):</b> &nbsp;3660</p>
+             <p><b>Finish:</b>&nbsp;Pot-Matt Gold Plated, & Black Powder Coated</p>
+        </div>
+    </div>
+
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid4">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod56.webp" alt="">
+    <h2> Full Black Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Height:</b>&nbsp;20(Large),15(Small)</p>
+            <p><b>Material:</b>&nbsp;Iron</p>
+            <p><b>Set:</b>&nbsp;2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Weight(in grams):</b> &nbsp;3660</p>
+             <p><b>Finish:</b>&nbsp;Black Powder Coated</p>
+        </div>
+    </div>
+    
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid5">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/iplanters/prod8.webp" alt="">
+    <h2> Natural Floor Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;5</p>
+            <p><b>Height:</b>&nbsp;5</p>
+            <p><b>Material:</b>&nbsp;Iron </p>
+            <p><b>Set:</b>&nbsp;3</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;7</p>
+            <p><b>Weight(in grams):</b>&nbsp;1240</p>
+             <p><b>Finish:</b>&nbsp;Glossey Grey & White Powder Coated</p>
+        </div>
+    </div>
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid6">
+    <button type="button" class="text-black" style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/iplanters/prod9.webp" alt="">
+    <h2> Metal Mini Desk Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;6</p>
+            <p><b>Height:</b>&nbsp;6</p>
+            <p><b>Material:</b>&nbsp;Iron</p>
+            <p><b>Set:</b>&nbsp;2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;6</p>
+            <p><b>Weight(in grams):</b> &nbsp;660</p>
+             <p><b>Finish:</b>&nbsp;Metalic Brown Powder Coated</p>
+        </div>
+    </div>
+
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid7">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod10.webp" alt="">
+    <h2> Sky Blue Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Height:</b>&nbsp;25(Large),20(Small)</p>
+            <p><b>Material:</b>&nbsp;Iron</p>
+            <p><b>Set:</b>&nbsp;2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Weight(in grams):</b> &nbsp;3920</p>
+             <p><b>Finish:</b>&nbsp;Sky Blue & Black Powder Coated</p>
+        </div>
+    </div>
+    
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid8">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod11.webp" alt="">
+    <h2> Goldblack Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;10(Large),11(Medium),14(Small)</p>
+            <p><b>Height:</b>&nbsp;12(Large),14(Medium),19(Small)</p>
+            <p><b>Material:</b>&nbsp;Iron </p>
+            <p><b>Set:</b>&nbsp; 3</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10(Large),11(Medium),14(Small)</p>
+            <p><b>Weight(in grams):</b>&nbsp;7850</p>
+             <p><b>Finish:</b>&nbsp;Matt Gold Plated & Black Powder Coated</p>
+        </div>
+    </div>
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid9">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod51.webp" alt="">
+    <h2> Pink Black Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp; 10(Large),11(Medium),14(Small).</p>
+            <p><b>Height:</b>&nbsp;12(Large),14(Medium),18(Small).</p>
+            <p><b>Material:</b>&nbsp; Iron</p>
+            <p><b>Set:</b>&nbsp; 3</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10(Large),11(Medium),14(Small).</p>
+            <p><b>Weight(in grams):</b> &nbsp;7850</p>
+             <p><b>Finish:</b>&nbsp;Matt Texture orange, &- Black Powder Coated</p>
+        </div>
+    </div>
+
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid10">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod12.webp" alt="">
+    <h2> Multicolor Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;6</p>
+            <p><b>Height:</b>&nbsp;12</p>
+            <p><b>Material:</b>&nbsp;Iron</p>
+            <p><b>Set:</b>&nbsp;3</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;6</p>
+            <p><b>Weight(in grams):</b> &nbsp;3180</p>
+             <p><b>Finish:</b>&nbsp;Multicolor Powder Coate</p>
+        </div>
+    </div>
+    
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid11">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod13.webp" alt="">
+    <h2> Black Large Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;15(Large),10(Small)</p>
+            <p><b>Height:</b>&nbsp;19(Large),14(Small)</p>
+            <p><b>Material:</b>&nbsp;Iron </p>
+            <p><b>Set:</b>&nbsp;2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;15(Large),10(Small)</p>
+            <p><b>Weight(in grams):</b>&nbsp;5460</p>
+             <p><b>Finish:</b>&nbsp;Matt Black Powder Coated</p>
+        </div>
+    </div>
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid12">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod15.webp" alt="">
+    <h2> Ivery with Brown Matt Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;10</p>
+            <p><b>Height:</b>&nbsp;19</p>
+            <p><b>Material:</b>&nbsp;Iron</p>
+            <p><b>Set:</b>&nbsp;2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10</p>
+            <p><b>Weight(in grams):</b> &nbsp;4750</p>
+             <p><b>Finish:</b>&nbsp;Matt Ivery and Brown Powder Coated</p>
+        </div>
+    </div>
+
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid13">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod16.webp" alt="">
+    <h2> Dim Green Matt Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Height:</b>&nbsp;24(Large),19(Small)</p>
+            <p><b>Material:</b>&nbsp;Iron</p>
+            <p><b>Set:</b>&nbsp;2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Weight(in grams):</b> &nbsp;5200</p>
+             <p><b>Finish:</b>&nbsp;Olive Green & Gold Matt</p>
+        </div>
+    </div>
+    
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid14">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod17.webp" alt="">
+    <h2> U Rose Gold Planterr</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Height:</b>&nbsp;15(Large),12(Small)</p>
+            <p><b>Material:</b>&nbsp;Iron </p>
+            <p><b>Set:</b>&nbsp; 2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Weight(in grams):</b>&nbsp;4920</p>
+             <p><b>Finish:</b>&nbsp;Pot Rose Gold Palted & White Powder</p>
+        </div>
+    </div>
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid15">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod20.webp" alt="">
+    <h2> U Shape Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Height:</b>&nbsp;15(Large),12(Small)</p>
+            <p><b>Material:</b>&nbsp; Iron</p>
+            <p><b>Set:</b>&nbsp; 2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Weight(in grams):</b> &nbsp;4920</p>
+             <p><b>Finish:</b>&nbsp;Ivery white & Brown Powder Coated</p>
+        </div>
+    </div>
+
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid16">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod21.webp" alt="">
+    <h2> Cane Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;11(Large),9(Medium),9(Small)</p>
+            <p><b>Height:</b>&nbsp;24(Large),19(Medium),16(Small)</p>
+            <p><b>Material:</b>&nbsp;Iron</p>
+            <p><b>Set:</b>&nbsp;3</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;11(Large),9(Medium),9(Small)</p>
+            <p><b>Weight(in grams):</b> &nbsp;6060</p>
+             <p><b>Finish:</b>&nbsp;Brass Palting with Cane Hand work</p>
+        </div>
+    </div>
+    
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid17">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod56.webp" alt="">
+    <h2> Dim Black Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Height:</b>&nbsp;24(Large),19(Small).</p>
+            <p><b>Material:</b>&nbsp;Iron </p>
+            <p><b>Set:</b>&nbsp;2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Weight(in grams):</b>&nbsp;5200</p>
+             <p><b>Finish:</b>&nbsp;Black Powder &brown Matt</p>
+        </div>
+    </div>
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid18">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod57.webp" alt="">
+    <h2> Glossy Gold Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Height:</b>&nbsp;25(Large),19(Small)</p>
+            <p><b>Material:</b>&nbsp; Iron</p>
+            <p><b>Set:</b>&nbsp; 2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Weight(in grams):</b> &nbsp;3920</p>
+             <p><b>Finish:</b>&nbsp;Glossy Gold Plating</p>
+        </div>
+    </div>
+
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid19">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod58.webp" alt="">
+    <h2> Ovate Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;10(Large),10(Small)</p>
+            <p><b>Height:</b>&nbsp;22(Large),17(Small)</p>
+            <p><b>Material:</b>&nbsp; Iron</p>
+            <p><b>Set:</b>&nbsp; 2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10(Large),10(Small)</p>
+            <p><b>Weight(in grams):</b> &nbsp;3820</p>
+             <p><b>Finish:</b>&nbsp;Matt Gold Plated</p>
+        </div>
+    </div>
+    
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid20">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod59.webp" alt="">
+    <h2> Egg Bowl</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;8</p>
+            <p><b>Height:</b>&nbsp;9.5</p>
+            <p><b>Material:</b>&nbsp;Iron </p>
+            <p><b>Set:</b>&nbsp;2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;8</p>
+            <p><b>Weight(in grams):</b>&nbsp;1420</p>
+             <p><b>Finish:</b>&nbsp;COPPER ANTIQUE AND BRASS PLATING</p>
+        </div>
+    </div>
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid21">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/iplanters/prod60.webp" alt="">
+    <h2> Black Floor Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;10</p>
+            <p><b>Height:</b>&nbsp;6</p>
+            <p><b>Material:</b>&nbsp;Iron</p>
+            <p><b>Set:</b>&nbsp;3</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10</p>
+            <p><b>Weight(in grams):</b> &nbsp;2380</p>
+             <p><b>Finish:</b>&nbsp;Matt Black Powder Coated</p>
+        </div>
+    </div>
+
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid22">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/iplanters/prod61.webp" alt="">
+    <h2> Black Tringle Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;7</p>
+            <p><b>Height:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Material:</b>&nbsp;Iron</p>
+            <p><b>Set:</b>&nbsp;3</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;7</p>
+            <p><b>Weight(in grams):</b> &nbsp;1460</p>
+             <p><b>Finish:</b>&nbsp;Matt Black Powder Coated</p>
+        </div>
+    </div>
+    
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid23">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod62.webp" alt="">
+    <h2> Hipe Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Height:</b>&nbsp;29(Large),22(Small)</p>
+            <p><b>Material:</b>&nbsp;Iron </p>
+            <p><b>Set:</b>&nbsp;2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10(Large),8(Small)</p>
+            <p><b>Weight(in grams):</b>&nbsp;5060</p>
+             <p><b>Finish:</b>&nbsp;Matt Gold Powder Coated</p>
+        </div>
+    </div>
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid24">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod64.webp" alt="">
+    <h2> Combo Gold Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;7.5(Large),5(Small)</p>
+            <p><b>Height:</b>&nbsp;34(Large),29(Medium),24(Small)</p>
+            <p><b>Material:</b>&nbsp;Iron</p>
+            <p><b>Set:</b>&nbsp;3</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;7.5(Large),5(Small)</p>
+            <p><b>Weight(in grams):</b> &nbsp;5560</p>
+             <p><b>Finish:</b>&nbsp;Matt Gold Powder Coated</p>
+        </div>
+    </div>
+
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid25">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod65.webp" alt="">
+    <h2> Combo Grey Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;7.5(Large),6(Small).</p>
+            <p><b>Height:</b>&nbsp;34(Large),29(Medium),24(Small).</p>
+            <p><b>Material:</b>&nbsp; Iron</p>
+            <p><b>Set:</b>&nbsp;3</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;7.5(Large),6(Small).</p>
+            <p><b>Weight(in grams):</b> &nbsp;5760</p>
+             <p><b>Finish:</b>&nbsp;Glossy grey and Yellow Powder coating</p>
+        </div>
+    </div>
+    
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid26">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/iplanters/prod67.webp" alt="">
+    <h2> Printed Floor Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;7</p>
+            <p><b>Height:</b>&nbsp;7.5</p>
+            <p><b>Material:</b>&nbsp;Iron </p>
+            <p><b>Set:</b>&nbsp;2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;7 </p>
+            <p><b>Weight(in grams):</b>&nbsp;2080</p>
+             <p><b>Finish:</b>&nbsp;ENAMEL & GLOD PLATING</p>
+        </div>
+    </div>
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid27">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod71.webp" alt="">
+    <h2> Hand Made Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;8</p>
+            <p><b>Height:</b>&nbsp;19(Large),16(Small)</p>
+            <p><b>Material:</b>&nbsp;Iron</p>
+            <p><b>Set:</b>&nbsp;2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;8</p>
+            <p><b>Weight(in grams):</b> &nbsp;3000</p>
+             <p><b>Finish:</b>&nbsp;Copper Plating with cane hand Stand Black matt</p>
+        </div>
+    </div>
+
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid28">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod68.webp" alt="">
+    <h2> Zing Bowl Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;5</p>
+            <p><b>Height:</b>&nbsp;14</p>
+            <p><b>Material:</b>&nbsp;Iron</p>
+            <p><b>Set:</b>&nbsp; 2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;7</p>
+            <p><b>Weight(in grams):</b> &nbsp;2920</p>
+             <p><b>Finish:</b>&nbsp;Industrial gray Stand Black matt Powder coat</p>
+        </div>
+    </div>
+    
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid29">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/iplanters/prod70.webp" alt="">
+    <h2> Brown Floor Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;8(Large),7(Medium),6(Small)</p>
+            <p><b>Height:</b>&nbsp;8(Large),7(Medium),6(Small)</p>
+            <p><b>Material:</b>&nbsp;Iron </p>
+            <p><b>Set:</b>&nbsp; 3</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;8(Large),7(Medium),6(Small)</p>
+            <p><b>Weight(in grams):</b>&nbsp;1900</p>
+             <p><b>Finish:</b>&nbsp;Ivery white or Brown Powder coat</p>
+        </div>
+    </div>
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid30">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/iplanters/prod72.webp" alt="">
+    <h2> Pink Floor Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;8(Large),7(Medium),6(Small)</p>
+            <p><b>Height:</b>&nbsp;8(Large),7(Medium),6(Small)</p>
+            <p><b>Material:</b>&nbsp; Iron</p>
+            <p><b>Set:</b>&nbsp; 3</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;8(Large),7(Medium),6(Small)</p>
+            <p><b>Weight(in grams):</b> &nbsp;1900</p>
+             <p><b>Finish:</b>&nbsp;Texture Orange Powder coating</p>
+        </div>
+    </div>
+
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid31">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/iplanters/prod73.webp" alt="">
+    <h2> Rose Gold Floor Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;14(A),12(B),10(C),8(D)</p>
+            <p><b>Height:</b>&nbsp;14(A),12(B),10(C),8(D)</p>
+            <p><b>Material:</b>&nbsp; Iron</p>
+            <p><b>Set:</b>&nbsp;4</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;14(A),12(B),10(C),8(D)</p>
+            <p><b>Weight(in grams):</b> &nbsp;6160</p>
+             <p><b>Finish:</b>&nbsp;Rose gold Plating</p>
+        </div>
+    </div>
+    
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid32">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod74.webp" alt="">
+    <h2> Table Tree Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;4</p>
+            <p><b>Height:</b>&nbsp;8</p>
+            <p><b>Material:</b>&nbsp;Iron </p>
+            <p><b>Set:</b>&nbsp;1</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;4</p>
+            <p><b>Weight(in grams):</b>&nbsp;360</p>
+             <p><b>Finish:</b>&nbsp;Multicolor Powder or plated</p>
+        </div>
+    </div>
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid33">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/planterws/prod48.webp" alt="">
+    <h2> CANE PLANTER</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;10.62(L)</p>
+            <p><b>Height:</b>&nbsp;32</p>
+            <p><b>Material:</b>&nbsp; Iron</p>
+            <p><b>Set:</b>&nbsp;1</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;10.62</p>
+            <p><b>Weight(in grams):</b> &nbsp;3180</p>
+             <p><b>Finish:</b>&nbsp;Copper with Black Cane, Gold Coated</p>
+        </div>
+    </div>
+
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid34">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/iplanters/prod49.webp" alt="">
+    <h2> Chic Gold Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;9.00(L),8(S)</p>
+            <p><b>Height:</b>&nbsp;9.00(L),8(S)</p>
+            <p><b>Material:</b>&nbsp;Iron</p>
+            <p><b>Set:</b>&nbsp;2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;9.00(L),8(S)</p>
+            <p><b>Weight(in grams):</b> &nbsp;1500</p>
+             <p><b>Finish:</b>&nbsp;Brass Gold plating</p>
+        </div>
+    </div>
+    
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid35">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/iplanters/prod50.webp" alt="">
+    <h2> Floor U Shape Planter</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;8(Large),7(Small)</p>
+            <p><b>Height:</b>&nbsp;8(Large),7(Small).</p>
+            <p><b>Material:</b>&nbsp;Iron </p>
+            <p><b>Set:</b>&nbsp;2</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;8(Large),7(Small)</p>
+            <p><b>Weight(in grams):</b>&nbsp;1220</p>
+             <p><b>Finish:</b>&nbsp;Brass Plating</p>
+        </div>
+    </div>
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid36">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/mirror/prod96.webp" alt="">
+    <h2> Metal Black Mirror</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;9.75(Large),8.5(Medium),7(Small)</p>
+            <p><b>Height:</b>&nbsp;14(Large),12(Medium),10(Small)</p>
+            <p><b>Material:</b>&nbsp;Iron and Glass</p>
+            <p><b>Set:</b>&nbsp; 3</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;0</p>
+            <p><b>Weight(in grams):</b>&nbsp;0</p>
+             <p><b>Finish:</b>&nbsp;GOLD ANTIQUE</p>
+        </div>
+    </div>
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid37">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/mirror/prod98.webp" alt="">
+    <h2> Bathroom Note Pad Mirror</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;15</p>
+            <p><b>Height:</b>&nbsp;15</p>
+            <p><b>Material:</b>&nbsp; Wood and Glass</p>
+            <p><b>Set:</b>&nbsp;1</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;4.25</p>
+            <p><b>Weight(in grams):</b> &nbsp;0</p>
+             <p><b>Finish:</b>&nbsp;WOOD, IRON & MIRROR NATURAL & GOLD PLATING</p>
+        </div>
+    </div>
+
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+<div class="pop-up justify-content-center" id="prodid38">
+    <button type="button" class=" text-black " style="width:40px;position:absolute;top:-50px;right:0;" onclick="closePopUp()">X</button>
+    <img src="./media/image/mirror/prod97.webp" alt="">
+    <h2> Black Mirror</h2>
+    <div class="details">
+        <div class="custom-col-1">
+            <p><b>Length:</b>&nbsp;15</p>
+            <p><b>Height:</b>&nbsp;24.5</p>
+            <p><b>Material:</b>&nbsp;Wood and Glass </p>
+            <p><b>Set:</b>&nbsp;1</p>
+        </div>
+        <div class="custom-col-2">
+            <p><b>Width:</b>&nbsp;5.25</p>
+            <p><b>Weight(in grams):</b>&nbsp;0</p>
+             <p><b>Finish:</b>&nbsp;Wood Black Mirror</p>
+        </div>
+    </div>
+     <button type="button" onclick="addToCart(this)" 
+ class="popcart">
+        Add to Cart
+    </button>
+</div>
+
+
+
+
+
+<script>
+  function updateCartItemCount(count) {
+  const cartItemCount = document.querySelector('.cart-item-count');
+  cartItemCount.innerText = count;
+}
+
+// Call this function when a new item is added to the cart
+function addItemToCart(item) {
+  // Add item to cart logic
+  const cartCount = getCartCount();
+  updateCartItemCount(cartCount);
+}
+
+// Call this function when the cart is loaded
+function loadCart() {
+  const cartCount = getCartCount();
+  updateCartItemCount(cartCount);
+}
+
+loadCart();
+
+</script>
+
+
+
+<div id="popup">
+  <span class="close">&times;</span>
+  <img id="popup-image" src="" alt="">
+</div>
+
+
+  <!-- Footer Code  -->
+  <footer class="bg-light py-4 text-dark">
+    <div class="container-fluid">
+        <div class=" text-center ">
+            <img src="./media/logo/logo.png" alt="" style=" margin-top: 10px; background-color: white;" class="d-block mx-auto">
+            <p class="mt-4 mx-5"><b>Metaledge Exports Private Limited</b> is a 4 years 5 months old Private Limited Indian Non-Government Company incorporated on 18 Sep 2018. Its registered office is in Moradabad, Uttar Pradesh, India</p>
+            <p style="margin: auto;"><b>Manoj Kumar Sharma</b> and <b>Seema Sharma</b> are presently associated as directors.</p>
+  
+        </div>
+        <div class="text-center">
+            <!-- <p class=" text-center fs-3 mx-auto d-block mt-4" style="font-family: monospace;color: black;font-weight: 800;border-bottom: 2px solid black; width:100px">LINKS</p> -->
+            <div class="d-flex justify-content-center flex-wrap w-100">
+                <a href="./index.html" class="btn btn-custom px-5 py-2 me-2 my-2">Home</a>
+                <a href="./about.html" class="btn btn-custom px-5 py-2 me-2 my-2">About</a>
+                <a href="./product.html" class="btn btn-custom px-5 py-2 me-2 my-2">Product</a>
+                <a href="./contact.html" class="btn btn-custom px-5 py-2 me-2 my-2">Contact</a>
+              </div>
+              
+        <div class="copy text-center justify-content-center mt-3 w-100">
+            &copy; 2023 Metaledge Exports PVT. LTD. All rights reserved | Made by <a href="https://www.facebook.com/cscouncilindia/" style="text-decoration: none; ">CS Council</a>
+        </div>
+    </div>
+  </footer>
+
+  <script>
+    // Get references to the divs with ids part1 and part2
+  const part1 = document.getElementById('part1');
+  const part2 = document.getElementById('part2');
+  
+  // Show/hide divs based on screen size
+  function showHideDivs() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth >= 1200) {
+    part1.classList.remove('d-none');
+    part2.classList.remove('d-flex');
+    part2.classList.add('d-none');
+    part1.classList.add('d-block');
+      document.getElementById('boxer').style.width="30%";
+      document.getElementById('box2').style.width="69%";
+    } else {
+      part2.classList.remove('d-none');
+    part1.classList.remove('d-block');
+    part1.classList.add('d-none');
+    part2.classList.add('d-flex');
+      document.getElementById('boxer').style.width="100%";
+      document.getElementById('box2').style.width="100%";
+    }
+  }
+  
+  // Call the function initially to set the display state correctly
+  showHideDivs();
+
+
+// Call the function whenever the window is resized
+window.addEventListener('resize', showHideDivs);
+  
+  </script>
+    
+
+
+   <script src="./main.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+  </body>
+</html>
